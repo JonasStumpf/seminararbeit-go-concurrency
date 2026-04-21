@@ -1,0 +1,260 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestBasicLoopedSynced
+--- PASS: TestBasicLoopedSynced (1.01s)
+PASS
+ok  	deadlocks	1.011s
+Deadlocking Element:  1 M 12 16 1000000003
+Deadlocking Element:  2 M 42 46 1000000002
+Bugreport info: 0_1,suc
+rewriteMixedDeadlock: lastTime = 118
+rewriteMixedDeadlock: pair 0: waiter=R1 holder=R2
+rewriteMixedDeadlock: waiter R1 shortened (drop chanElem tSort=62)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=118
+rewriteMixedDeadlock: waiterLock R1 tPre=6 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=60 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R2 holder=R1
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R1 shortened to C.tPost=62
+rewriteMixedDeadlock: waiterLock R2 tPre=42 tPost=0
+rewriteMixedDeadlock: holderChan R1 tPre=30 tPost=0
+rewriteMixedDeadlock: ShiftTrace by 1, new waiterTPre=6
+rewriteMixedDeadlock: holder R2 elem tPre 35->0 tPost=0
+rewriteMixedDeadlock: holder R2 elem tPre 41->1 tPost=1
+rewriteMixedDeadlock: holder R2 elem tPre 47->2 tPost=2
+rewriteMixedDeadlock: holder R2 elem tPre 53->3 tPost=3
+rewriteMixedDeadlock: holder R2 elem tPre 59->4 tPost=4
+rewriteMixedDeadlock: holder R2 elem tPre 119->5 tPost=5
+rewriteMixedDeadlock: holder R1 elem tPre 0->36 tPost=36
+rewriteMixedDeadlock: holder R1 elem tPre 4->37 tPost=37
+rewriteMixedDeadlock: holder R1 elem tPre 11->38 tPost=38
+rewriteMixedDeadlock: holder R1 elem tPre 17->39 tPost=39
+rewriteMixedDeadlock: holder R1 elem tPre 23->40 tPost=40
+rewriteMixedDeadlock: holder R1 elem tPre 29->41 tPost=41
+rewriteMixedDeadlock: done. Marker at 119 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_2,suc
+rewriteMixedDeadlock: lastTime = 40
+rewriteMixedDeadlock: pair 0: waiter=R1 holder=R2
+rewriteMixedDeadlock: waiter R1 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R1 tPre=6 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=60 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R2 holder=R1
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R1 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R2 tPre=36 tPost=0
+rewriteMixedDeadlock: holderChan R1 tPre=30 tPost=0
+rewriteMixedDeadlock: holder R2 has empty trace — skip reorder
+rewriteMixedDeadlock: holder R1 elem tPre 0->35 tPost=35
+rewriteMixedDeadlock: done. Marker at 41 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_3,suc
+rewriteMixedDeadlock: lastTime = 16
+rewriteMixedDeadlock: pair 0: waiter=R1 holder=R2
+rewriteMixedDeadlock: waiter R1 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R1 tPre=12 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=60 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R2 holder=R1
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R1 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R2 tPre=42 tPost=0
+rewriteMixedDeadlock: holderChan R1 tPre=30 tPost=0
+rewriteMixedDeadlock: holder R2 has empty trace — skip reorder
+rewriteMixedDeadlock: holder R1 elem tPre 0->41 tPost=41
+rewriteMixedDeadlock: done. Marker at 17 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_4,suc
+rewriteMixedDeadlock: lastTime = 0
+rewriteMixedDeadlock: pair 0: waiter=R1 holder=R2
+rewriteMixedDeadlock: waiter R1 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R1 tPre=12 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=60 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R2 holder=R1
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R1 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R2 tPre=36 tPost=0
+rewriteMixedDeadlock: holderChan R1 tPre=30 tPost=0
+rewriteMixedDeadlock: holder R2 has empty trace — skip reorder
+rewriteMixedDeadlock: holder R1 elem tPre 0->35 tPost=35
+rewriteMixedDeadlock: done. Marker at 1 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_5,suc
+rewriteMixedDeadlock: lastTime = 90
+rewriteMixedDeadlock: pair 0: waiter=R2 holder=R1
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R1 shortened to C.tPost=90
+rewriteMixedDeadlock: waiterLock R2 tPre=42 tPost=0
+rewriteMixedDeadlock: holderChan R1 tPre=88 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R1 holder=R2
+rewriteMixedDeadlock: waiter R1 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R1 tPre=70 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=60 tPost=0
+rewriteMixedDeadlock: holder R1 elem tPre 0->40 tPost=40
+rewriteMixedDeadlock: holder R1 elem tPre 4->41 tPost=41
+rewriteMixedDeadlock: holder R2 has empty trace — skip reorder
+rewriteMixedDeadlock: done. Marker at 91 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_6,suc
+rewriteMixedDeadlock: lastTime = 68
+rewriteMixedDeadlock: pair 0: waiter=R2 holder=R1
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R1 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R2 tPre=42 tPost=0
+rewriteMixedDeadlock: holderChan R1 tPre=88 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R1 holder=R2
+rewriteMixedDeadlock: waiter R1 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R1 tPre=64 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=60 tPost=0
+rewriteMixedDeadlock: holder R1 elem tPre 0->41 tPost=41
+rewriteMixedDeadlock: holder R2 has empty trace — skip reorder
+rewriteMixedDeadlock: done. Marker at 69 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_7,suc
+rewriteMixedDeadlock: lastTime = 0
+rewriteMixedDeadlock: pair 0: waiter=R2 holder=R1
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R1 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R2 tPre=36 tPost=0
+rewriteMixedDeadlock: holderChan R1 tPre=88 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R1 holder=R2
+rewriteMixedDeadlock: waiter R1 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R1 tPre=70 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=60 tPost=0
+rewriteMixedDeadlock: holder R1 elem tPre 0->35 tPost=35
+rewriteMixedDeadlock: holder R2 has empty trace — skip reorder
+rewriteMixedDeadlock: done. Marker at 1 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_8,suc
+rewriteMixedDeadlock: lastTime = 0
+rewriteMixedDeadlock: pair 0: waiter=R2 holder=R1
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R1 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R2 tPre=36 tPost=0
+rewriteMixedDeadlock: holderChan R1 tPre=88 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R1 holder=R2
+rewriteMixedDeadlock: waiter R1 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=0
+rewriteMixedDeadlock: waiterLock R1 tPre=64 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=60 tPost=0
+rewriteMixedDeadlock: holder R1 elem tPre 0->35 tPost=35
+rewriteMixedDeadlock: holder R2 has empty trace — skip reorder
+rewriteMixedDeadlock: done. Marker at 1 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_9,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_1
+Found ReplayEnd Marker with exit code 41
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_2
+FinishReplay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	26.007s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_3
+Found ReplayEnd Marker with exit code 42
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_4
+Found ReplayEnd Marker with exit code 42
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_5
+Found ReplayEnd Marker with exit code 42
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_6
+Found ReplayEnd Marker with exit code 42
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_7
+Found ReplayEnd Marker with exit code 42
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_8
+Found ReplayEnd Marker with exit code 42
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+TestName:  TestBasicLoopedSynced
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_loopedSynced_test.go
+=== RUN   TestBasicLoopedSynced
+Reading trace from rewrittenTrace_9
+Found ReplayEnd Marker with exit code 42
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s

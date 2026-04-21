@@ -1,0 +1,26 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/InInfeasible_test.go
+TestName:  TestInInfeasible
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/InInfeasible_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestInInfeasible
+--- PASS: TestInInfeasible (1.01s)
+PASS
+ok  	deadlocks	1.014s
+Deadlocking Element:  1 M 34 38 1000000002
+Deadlocking Element:  2 M 58 62 1000000001
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/InInfeasible_test.go
+TestName:  TestInInfeasible
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/InInfeasible_test.go
+=== RUN   TestInInfeasible
+Reading trace from rewrittenTrace_1
+Found ReplayEnd Marker with exit code 41
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.008s

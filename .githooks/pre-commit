@@ -1,0 +1,30 @@
+#!/bin/sh
+# Prevent committing changes inside submodule working dirs (block staged files under submodule paths)
+set -e
+
+# collect submodule paths from .gitmodules
+SUBPATHS=""
+if [ -f .gitmodules ]; then
+  # git config --file .gitmodules --get-regexp path prints lines like: submodule.<name>.path <path>
+  SUBPATHS=$(git config --file .gitmodules --get-regexp path 2>/dev/null | awk '{print $2}')
+fi
+
+# no submodules -> nothing to do
+[ -z "$SUBPATHS" ] && exit 0
+
+# get staged paths
+STAGED=$(git diff --cached --name-only || true)
+
+for sub in $SUBPATHS; do
+  for f in $STAGED; do
+    case "$f" in
+      "$sub"|"$sub"/*)
+        echo "Abbruch: Commit enthält gestagte Änderungen im Submodule-Pfad '$sub' (Datei: $f)." >&2
+        echo "Wenn du wirklich den Submodule-Zeiger aktualisieren willst, füge '$sub' gezielt hinzu: git add $sub" >&2
+        exit 1
+        ;;
+    esac
+  done
+done
+
+exit 0

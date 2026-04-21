@@ -1,0 +1,3 @@
+A01,tp,T:0:0:0:CS:/workspaces/seminararbeit-go-concurrency/examples/SendClosedChannel_test.go:23
+A01,tp,T:3:1000000001:12:CS:/workspaces/seminararbeit-go-concurrency/examples/SendClosedChannel_test.go:23,T:2:1000000001:8:CC:/workspaces/seminararbeit-go-concurrency/examples/SendClosedChannel_test.go:18
+L00,tp,

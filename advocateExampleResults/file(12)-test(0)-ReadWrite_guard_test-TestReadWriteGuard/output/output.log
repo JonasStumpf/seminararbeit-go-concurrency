@@ -1,0 +1,26 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_guard_test.go
+TestName:  TestReadWriteGuard
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_guard_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestReadWriteGuard
+--- PASS: TestReadWriteGuard (1.01s)
+PASS
+ok  	deadlocks	1.011s
+Deadlocking Element:  2 M 46 50 1000000002
+Deadlocking Element:  1 M 14 18 1000000003
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_guard_test.go
+TestName:  TestReadWriteGuard
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_guard_test.go
+=== RUN   TestReadWriteGuard
+Reading trace from rewrittenTrace_1
+FinishReplay
+Found ReplayEnd Marker with exit code 41
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.009s

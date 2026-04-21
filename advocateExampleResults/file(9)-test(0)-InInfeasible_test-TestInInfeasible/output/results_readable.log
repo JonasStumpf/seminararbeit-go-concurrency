@@ -1,0 +1,10 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Possible cyclic deadlock:tp:
+	stuck: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/InInfeasible_test.go:23@58
+	cycle: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/InInfeasible_test.go:29@34;/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/InInfeasible_test.go:23@58
+
+```

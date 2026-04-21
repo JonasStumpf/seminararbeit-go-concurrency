@@ -1,0 +1,6 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+TestName:  TestMixedDeadlock_No_MD_AfterPCS
+Import added at line: 26
+Header added at line: 437
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+go version go1.25.0 linux/amd64

@@ -1,0 +1,10 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Possible unlock of a not locked mutex:tp:
+	unlock: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReleaseInOtherRoutine_test.go:23@26
+	lock: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReleaseInOtherRoutine_test.go:27@12
+
+```

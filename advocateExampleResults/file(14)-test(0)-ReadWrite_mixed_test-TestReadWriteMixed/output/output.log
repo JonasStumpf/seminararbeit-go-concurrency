@@ -1,0 +1,12 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_mixed_test.go
+TestName:  TestReadWriteMixed
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_mixed_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestReadWriteMixed2
+--- PASS: TestReadWriteMixed2 (0.00s)
+=== RUN   TestReadWriteMixed
+--- PASS: TestReadWriteMixed (1.01s)
+PASS
+ok  	deadlocks	1.009s

@@ -1,0 +1,14 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Possible cyclic deadlock:tp:
+	stuck: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go:21@40
+	cycle: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go:31@10;/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go:21@40
+
+2 Possible cyclic deadlock:tp:
+	stuck: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go:24@58
+	cycle: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go:31@10;/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go:24@58
+
+```

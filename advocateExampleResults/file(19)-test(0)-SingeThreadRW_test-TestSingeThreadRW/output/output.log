@@ -1,0 +1,28 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/SingeThreadRW_test.go
+TestName:  TestSingeThreadRW
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/SingeThreadRW_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestSingeThreadRW
+HAS:  false
+HAS:  true
+FAIL	deadlocks	600.101s
+FAIL
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/SingeThreadRW_test.go
+TestName:  TestSingeThreadRW
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/SingeThreadRW_test.go
+=== RUN   TestSingeThreadRW
+Reading trace from rewrittenTrace_1
+HAS:  false
+
+Exit Replay with code  10 Timeout
+Exit Message: panic: test timed out after 10m0s
+	running tests:
+		TestSingeThreadRW (10m0s)
+
+FAIL	deadlocks	600.003s
+FAIL

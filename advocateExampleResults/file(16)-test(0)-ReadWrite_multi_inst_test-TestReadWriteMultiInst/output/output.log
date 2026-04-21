@@ -1,0 +1,109 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go
+TestName:  TestReadWriteMultiInst
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestReadWriteMultiInst2
+--- PASS: TestReadWriteMultiInst2 (0.00s)
+=== RUN   TestReadWriteMultiInst
+--- PASS: TestReadWriteMultiInst (1.01s)
+PASS
+ok  	deadlocks	1.011s
+Deadlocking Element:  1 M 14 22 1000000003
+Deadlocking Element:  2 M 56 66 1000000001
+Bugreport info: 0_1,suc
+Deadlocking Element:  1 M 14 22 1000000003
+Deadlocking Element:  2 M 110 130 1000000001
+Bugreport info: 0_2,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go
+TestName:  TestReadWriteMultiInst
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go
+=== RUN   TestReadWriteMultiInst2
+--- PASS: TestReadWriteMultiInst2 (0.00s)
+=== RUN   TestReadWriteMultiInst
+Reading trace from rewrittenTrace_1
+Found ReplayEnd Marker with exit code 41
+Disable Replay
+panic: test timed out after 10m0s
+	running tests:
+		TestReadWriteMultiInst (10m0s)
+
+goroutine 65 [running]:
+testing.(*M).startAlarm.func1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2682 +0x285
+created by time.goFunc
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/time/sleep.go:215 +0x38
+
+goroutine 1 [chan receive, 9 minutes]:
+testing.(*T).Run(0xc0001763c0, {0x63aa00, 0x16}, 0x644d70)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2005 +0x93c
+testing.runTests.func1(0xc000176000)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2477 +0xa5
+testing.tRunner(0xc000176000, 0xc000167918)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:1934 +0x18e
+testing.runTests(0xc000124228, {0x76fc00, 0x27, 0x27}, {0xc271ae5707aaaaf6, 0x8bb2cb46a6, 0x774d60})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2475 +0x5d7
+testing.(*M).Run(0xc00014e210)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2337 +0xb39
+main.main()
+	_testmain.go:121 +0xa5
+
+goroutine 20 [sync.Mutex.Lock, 9 minutes]:
+internal/sync.runtime_SemacquireMutex(0xc00015e180?, 0x1?, 0x3?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:95 +0x25
+internal/sync.(*Mutex).lockSlow(0xc00015e180)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/internal/sync/mutex.go:149 +0x245
+internal/sync.(*Mutex).Lock(0xc00015e180)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/internal/sync/mutex.go:70 +0x45
+sync.(*Mutex).Lock(0xc00015e180)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/mutex.go:92 +0x2b6
+sync.(*RWMutex).Lock(0xc00015e180)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/rwmutex.go:301 +0x265
+deadlocks.TestReadWriteMultiInst(0xc0001763c0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go:28 +0x11a
+testing.tRunner(0xc0001763c0, 0x644d70)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:1934 +0x18e
+created by testing.(*T).Run in goroutine 1
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:1997 +0x914
+
+goroutine 21 [sleep, 9 minutes]:
+time.Sleep(0xd18c2e2800)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/time.go:363 +0x13c
+advocate.startReplay.func2()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/advocate/advocate_replay.go:116 +0x25
+created by advocate.startReplay in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/advocate/advocate_replay.go:115 +0xc68
+
+goroutine 23 [sync.Mutex.Lock, 9 minutes]:
+internal/sync.runtime_SemacquireMutex(0xc00015e150?, 0x1?, 0x3?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:95 +0x25
+internal/sync.(*Mutex).lockSlow(0xc00015e150)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/internal/sync/mutex.go:149 +0x245
+internal/sync.(*Mutex).Lock(0xc00015e150)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/internal/sync/mutex.go:70 +0x45
+sync.(*Mutex).Lock(0xc00015e150)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/mutex.go:92 +0x2b6
+sync.(*RWMutex).Lock(0xc00015e150)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/rwmutex.go:301 +0x265
+deadlocks.TestReadWriteMultiInst.func1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go:18 +0x34
+created by deadlocks.TestReadWriteMultiInst in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go:16 +0x106
+FAIL	deadlocks	600.104s
+FAIL
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go
+TestName:  TestReadWriteMultiInst
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_multi_inst_test.go
+=== RUN   TestReadWriteMultiInst2
+--- PASS: TestReadWriteMultiInst2 (0.00s)
+=== RUN   TestReadWriteMultiInst
+Reading trace from rewrittenTrace_2
+FinishReplay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	5.007s

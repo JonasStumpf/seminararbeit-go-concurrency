@@ -1,0 +1,44 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+TestName:  TestMixedDeadlock_MD2_1_CloseB
+Import added at line: 26
+Header added at line: 167
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestMixedDeadlock_MD2_1_CloseB
+--- PASS: TestMixedDeadlock_MD2_1_CloseB (1.06s)
+PASS
+ok  	deadlocks	1.060s
+rewriteMixedDeadlock: lastTime = 42
+rewriteMixedDeadlock: pair 0: waiter=R2 holder=R3
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=20)
+rewriteMixedDeadlock: holder R3 shortened to C.tPost=42
+rewriteMixedDeadlock: waiterLock R2 tPre=14 tPost=0
+rewriteMixedDeadlock: holderChan R3 tPre=40 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R3 holder=R2
+rewriteMixedDeadlock: waiter R3 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=20
+rewriteMixedDeadlock: waiterLock R3 tPre=34 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=20 tPost=0
+rewriteMixedDeadlock: holder R3 elem tPre 34->12 tPost=12
+rewriteMixedDeadlock: holder R3 elem tPre 40->13 tPost=13
+rewriteMixedDeadlock: holder R2 elem tPre 14->33 tPost=33
+rewriteMixedDeadlock: done. Marker at 43 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+TestName:  TestMixedDeadlock_MD2_1_CloseB
+Import added at line: 26
+Header added at line: 167
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+=== RUN   TestMixedDeadlock_MD2_1_CloseB
+Reading trace from rewrittenTrace_1
+Found ReplayEnd Marker with exit code 42
+Disable Replay
+DEADLOCK_GC@9@/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:177@mutex:lock
+DEADLOCK_GC@10@/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:185@chan:revc
+LEAK_GC@6@/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:39@waitGroup:wait
+
+Exit Replay with code  42 Mixed Deadlock
+Exit Message: panic: GC
+
+FAIL	deadlocks	0.259s
+FAIL

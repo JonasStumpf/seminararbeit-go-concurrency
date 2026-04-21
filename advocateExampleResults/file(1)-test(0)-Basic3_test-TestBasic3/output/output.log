@@ -1,0 +1,27 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic3_test.go
+TestName:  TestBasic3
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic3_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestBasic3
+--- PASS: TestBasic3 (1.01s)
+PASS
+ok  	deadlocks	1.015s
+Deadlocking Element:  1 M 12 16 1000000002
+Deadlocking Element:  2 M 38 44 3000000001
+Deadlocking Element:  3 M 64 68 1000000001
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic3_test.go
+TestName:  TestBasic3
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic3_test.go
+=== RUN   TestBasic3
+Reading trace from rewrittenTrace_1
+Found ReplayEnd Marker with exit code 41
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.008s

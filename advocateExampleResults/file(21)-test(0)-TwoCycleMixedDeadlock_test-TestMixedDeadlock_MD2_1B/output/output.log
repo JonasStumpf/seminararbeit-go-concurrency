@@ -1,0 +1,426 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+TestName:  TestMixedDeadlock_MD2_1B
+Import added at line: 26
+Header added at line: 46
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestMixedDeadlock_MD2_1B
+--- PASS: TestMixedDeadlock_MD2_1B (1.06s)
+PASS
+ok  	deadlocks	1.062s
+rewriteMixedDeadlock: lastTime = 44
+rewriteMixedDeadlock: pair 0: waiter=R2 holder=R3
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=22)
+rewriteMixedDeadlock: holder R3 shortened to C.tPost=44
+rewriteMixedDeadlock: waiterLock R2 tPre=14 tPost=0
+rewriteMixedDeadlock: holderChan R3 tPre=42 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R3 holder=R2
+rewriteMixedDeadlock: waiter R3 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=22
+rewriteMixedDeadlock: waiterLock R3 tPre=36 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=20 tPost=0
+rewriteMixedDeadlock: holder R3 elem tPre 36->12 tPost=12
+rewriteMixedDeadlock: holder R3 elem tPre 42->13 tPost=13
+rewriteMixedDeadlock: holder R2 elem tPre 14->35 tPost=35
+rewriteMixedDeadlock: done. Marker at 45 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+TestName:  TestMixedDeadlock_MD2_1B
+Import added at line: 26
+Header added at line: 46
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+=== RUN   TestMixedDeadlock_MD2_1B
+Reading trace from rewrittenTrace_1
+SIGQUIT: quit
+PC=0x4986c1 m=0 sigcode=0
+
+goroutine 0 gp=0x775180 m=0 mp=0x7760c0 [idle]:
+runtime.futex(0x776210, 0x80, 0x0, 0x0, 0x0, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sys_linux_amd64.s:557 +0x21 fp=0x7fff1d0d2db0 sp=0x7fff1d0d2da8 pc=0x4986c1
+runtime.futexsleep(0x7fff1d0d2e18?, 0x775180?, 0x775180?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/os_linux.go:76 +0x30 fp=0x7fff1d0d2e00 sp=0x7fff1d0d2db0 pc=0x451270
+runtime.notesleep(0x776210)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/lock_futex.go:47 +0x9d fp=0x7fff1d0d2e38 sp=0x7fff1d0d2e00 pc=0x42439d
+runtime.mPark()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:2015 +0x1e fp=0x7fff1d0d2e58 sp=0x7fff1d0d2e38 pc=0x45b6fe
+runtime.stopm()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:3054 +0x6d fp=0x7fff1d0d2e80 sp=0x7fff1d0d2e58 pc=0x45cdcd
+runtime.findRunnable()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:3825 +0x30 fp=0x7fff1d0d3020 sp=0x7fff1d0d2e80 pc=0x45d890
+runtime.schedule()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:4193 +0xbd fp=0x7fff1d0d3058 sp=0x7fff1d0d3020 pc=0x45f47d
+runtime.park_m(0xc000103a40)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:4321 +0x1d9 fp=0x7fff1d0d30a8 sp=0x7fff1d0d3058 pc=0x45f859
+runtime.mcall()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:458 +0x55 fp=0x7fff1d0d30c0 sp=0x7fff1d0d30a8 pc=0x4949d5
+
+goroutine 1 gp=0xc000002380 m=nil [chan receive]:
+runtime.gopark(0x644f88, 0xc000174108, 0xe, 0x7, 0x2)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc0001672e8 sp=0xc0001672b8 pc=0x48f7f1
+runtime.chanrecv(0xc0001740a0, 0xc000167476, 0x1, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/chan.go:872 +0x585 fp=0xc000167408 sp=0xc0001672e8 pc=0x41dec5
+runtime.chanrecv1(0xc000124288?, 0x5fc980?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/chan.go:638 +0x14 fp=0xc000167430 sp=0xc000167408 pc=0x41d934
+testing.(*T).Run(0xc0001761e0, {0x63b4b8, 0x18}, 0x644cb8)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2005 +0x93c fp=0xc0001676a8 sp=0xc000167430 pc=0x55639c
+testing.runTests.func1(0xc000176000)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2477 +0xa5 fp=0xc000167740 sp=0xc0001676a8 pc=0x559fc5
+testing.tRunner(0xc000176000, 0xc000167918)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:1934 +0x18e fp=0xc000167828 sp=0xc000167740 pc=0x5547ee
+testing.runTests(0xc000124228, {0x76fc00, 0x27, 0x27}, {0xc271b0270b0b2acf, 0x8bb2cbd378, 0x774d60})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2475 +0x5d7 fp=0xc0001679b0 sp=0xc000167828 pc=0x559df7
+testing.(*M).Run(0xc00014e210)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2337 +0xb39 fp=0xc000167ee8 sp=0xc0001679b0 pc=0x557779
+main.main()
+	_testmain.go:121 +0xa5 fp=0xc000167f78 sp=0xc000167ee8 pc=0x5cd805
+runtime.main()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:285 +0x252 fp=0xc000167fe0 sp=0xc000167f78 pc=0x457f92
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000167fe8 sp=0xc000167fe0 pc=0x496881
+
+goroutine 2 gp=0xc0000028c0 m=nil [force gc (idle)]:
+runtime.gopark(0x6452a0, 0x774740, 0x11, 0xa, 0x1)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000084780 sp=0xc000084750 pc=0x48f7f1
+runtime.goparkunlock(0x774740?, 0x0?, 0x0?, 0x0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:519 +0x25 fp=0xc0000847b0 sp=0xc000084780 pc=0x4586c5
+runtime.forcegchelper()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:373 +0xb5 fp=0xc0000847e0 sp=0xc0000847b0 pc=0x4582f5
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc0000847e8 sp=0xc0000847e0 pc=0x496881
+created by runtime.init.7 in goroutine 1
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:361 +0x1a
+
+goroutine 3 gp=0xc000002e00 m=nil [GC sweep wait]:
+runtime.gopark(0x6452a0, 0x774a00, 0xc, 0x9, 0x1)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000084f58 sp=0xc000084f28 pc=0x48f7f1
+runtime.goparkunlock(0x774a00?, 0x0?, 0x0?, 0x0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:519 +0x25 fp=0xc000084f88 sp=0xc000084f58 pc=0x4586c5
+runtime.bgsweep(0xc0000ac000)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgcsweep.go:279 +0xa5 fp=0xc000084fc8 sp=0xc000084f88 pc=0x43dc45
+runtime.gcenable.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:212 +0x25 fp=0xc000084fe0 sp=0xc000084fc8 pc=0x430c45
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000084fe8 sp=0xc000084fe0 pc=0x496881
+created by runtime.gcenable in goroutine 1
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:212 +0x66
+
+goroutine 4 gp=0xc000002fc0 m=nil [GC scavenge wait]:
+runtime.gopark(0x6452a0, 0x774e60, 0xd, 0xa, 0x2)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000085748 sp=0xc000085718 pc=0x48f7f1
+runtime.goparkunlock(0x774e60?, 0x60?, 0x4e?, 0xc000002f00?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:519 +0x25 fp=0xc000085778 sp=0xc000085748 pc=0x4586c5
+runtime.(*scavengerState).park(0x774e60)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgcscavenge.go:425 +0x45 fp=0xc0000857a0 sp=0xc000085778 pc=0x43b125
+runtime.bgscavenge(0xc0000ac000)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgcscavenge.go:653 +0x45 fp=0xc0000857c8 sp=0xc0000857a0 pc=0x43b6a5
+runtime.gcenable.gowrap2()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:213 +0x25 fp=0xc0000857e0 sp=0xc0000857c8 pc=0x430be5
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc0000857e8 sp=0xc0000857e0 pc=0x496881
+created by runtime.gcenable in goroutine 1
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:213 +0xa5
+
+goroutine 17 gp=0xc000102380 m=nil [finalizer wait]:
+runtime.gopark(0x644fe0, 0x794f60, 0x10, 0xa, 0x1)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000080620 sp=0xc0000805f0 pc=0x48f7f1
+runtime.runFinalizers()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mfinal.go:210 +0x107 fp=0xc0000807e0 sp=0xc000080620 pc=0x42fb67
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc0000807e8 sp=0xc0000807e0 pc=0x496881
+created by runtime.createfing in goroutine 1
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mfinal.go:172 +0x45
+
+goroutine 18 gp=0xc000102540 m=nil [sync.WaitGroup.Wait]:
+runtime.gopark(0x6452a0, 0x77b1a0, 0x19, 0x5, 0x4)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000169bb8 sp=0xc000169b88 pc=0x48f7f1
+runtime.goparkunlock(0x77b1a0?, 0x27?, 0x0?, 0xc00013a4e0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:519 +0x25 fp=0xc000169be8 sp=0xc000169bb8 pc=0x4586c5
+runtime.semacquire1(0xc00016a080, 0x0, 0x1, 0x0, 0x19)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:192 +0x189 fp=0xc000169c38 sp=0xc000169be8 pc=0x46dda9
+sync.runtime_SemacquireWaitGroup(0xc00016a078?, 0x0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:114 +0x2e fp=0xc000169c70 sp=0xc000169c38 pc=0x490d8e
+sync.(*WaitGroup).Wait(0xc00016a078)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/waitgroup.go:292 +0x43c fp=0xc000169e00 sp=0xc000169c70 pc=0x4a563c
+deadlocks.run2(0xc0001242d0, 0xc0001242e8)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:39 +0x155 fp=0xc000169e38 sp=0xc000169e00 pc=0x5ca995
+deadlocks.TestMixedDeadlock_MD2_1B(0xc0001761e0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:68 +0x195 fp=0xc000169ec8 sp=0xc000169e38 pc=0x5cad55
+testing.tRunner(0xc0001761e0, 0x644cb8)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:1934 +0x18e fp=0xc000169fb0 sp=0xc000169ec8 pc=0x5547ee
+testing.(*T).Run.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:1997 +0x33 fp=0xc000169fe0 sp=0xc000169fb0 pc=0x5565f3
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000169fe8 sp=0xc000169fe0 pc=0x496881
+created by testing.(*T).Run in goroutine 1
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:1997 +0x914
+
+goroutine 19 gp=0xc000102700 m=nil [sleep]:
+runtime.gopark(0x6452e8, 0x0, 0x14, 0xe, 0x1)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000080f80 sp=0xc000080f50 pc=0x48f7f1
+time.Sleep(0xd18c2e2800)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/time.go:363 +0x13c fp=0xc000080fc0 sp=0xc000080f80 pc=0x492e3c
+advocate.startReplay.func2()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/advocate/advocate_replay.go:116 +0x25 fp=0xc000080fe0 sp=0xc000080fc0 pc=0x5c4745
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000080fe8 sp=0xc000080fe0 pc=0x496881
+created by advocate.startReplay in goroutine 18
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/advocate/advocate_replay.go:115 +0xc68
+
+goroutine 20 gp=0xc0001028c0 m=nil [semacquire]:
+runtime.gopark(0x6452a0, 0x77aca0, 0x13, 0x5, 0x4)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000094498 sp=0xc000094468 pc=0x48f7f1
+runtime.goparkunlock(0x77aca0?, 0x45?, 0xd7?, 0xc00013a540?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:519 +0x25 fp=0xc0000944c8 sp=0xc000094498 pc=0x4586c5
+runtime.semacquire1(0x7758b8, 0x0, 0x0, 0x0, 0x13)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:192 +0x189 fp=0xc000094518 sp=0xc0000944c8 pc=0x46dda9
+runtime.semacquire(0xc000094570?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:143 +0x1e fp=0xc000094550 sp=0xc000094518 pc=0x46dbfe
+runtime.gcStart({0x7f37c386c5c0?, 0xc000094622?, 0x426759?})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:682 +0x14e fp=0xc000094670 sp=0xc000094550 pc=0x4311ce
+runtime.mallocgcSmallScanNoHeader(0xe8, 0x620840)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1442 +0x1fe fp=0xc0000946d0 sp=0xc000094670 pc=0x426c1e
+runtime.mallocgc(0xe8, 0x620840, 0x1)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1066 +0xe7 fp=0xc000094700 sp=0xc0000946d0 pc=0x48dec7
+runtime.newobject(0x1?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1752 +0x25 fp=0xc000094728 sp=0xc000094700 pc=0x427425
+runtime.CallersFrames({0xc000514120, 0x1, 0x1})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/symtab.go:81 +0x29 fp=0xc000094748 sp=0xc000094728 pc=0x476909
+runtime.Caller(0x3)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/extern.go:321 +0x8e fp=0xc000094870 sp=0xc000094748 pc=0x421b0e
+runtime.WaitForReplay(0x5, 0x3, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_replay_wait.go:44 +0x6b fp=0xc0000948c0 sp=0xc000094870 pc=0x4171cb
+runtime.chanrecv(0xc000116990, 0x0, 0x1, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/chan.go:690 +0x117 fp=0xc0000949e0 sp=0xc0000948c0 pc=0x41da57
+runtime.chanrecv1(0xc000118a50?, 0x1?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/chan.go:638 +0x14 fp=0xc000094a08 sp=0xc0000949e0 pc=0x41d934
+runtime.gcBgMarkStartWorkers()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1383 +0x7b fp=0xc000094a40 sp=0xc000094a08 pc=0x432afb
+runtime.gcStart({0x7f37c386c5c0?, 0x652205?, 0x1?})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:726 +0x2b1 fp=0xc000094b60 sp=0xc000094a40 pc=0x431331
+runtime.mallocgcTiny(0x4, 0x6522b0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1244 +0x1fe fp=0xc000094bb8 sp=0xc000094b60 pc=0x42677e
+runtime.mallocgc(0x4, 0x0, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1057 +0xb2 fp=0xc000094be8 sp=0xc000094bb8 pc=0x48de92
+runtime.rawstring(0x4)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/string.go:319 +0x1c fp=0xc000094c10 sp=0xc000094be8 pc=0x47631c
+runtime.intstring(0xc000512500?, 0x36)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/string.go:305 +0x3a fp=0xc000094c50 sp=0xc000094c10 pc=0x47627a
+runtime.intToString(0x3?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_util.go:154 +0x34 fp=0xc000094ca8 sp=0xc000094c50 pc=0x41a994
+runtime.intToString(0x3f)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_util.go:156 +0x65 fp=0xc000094d00 sp=0xc000094ca8 pc=0x41a9c5
+runtime.BuildReplayKey(0x3f?, {0xc000116499, 0x66}, 0x3f)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_replay_element.go:20 +0x46 fp=0xc000094d78 sp=0xc000094d00 pc=0x414906
+runtime.(*ReplayElement).Key(0x3?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_replay_element.go:57 +0x25 fp=0xc000094da8 sp=0xc000094d78 pc=0x4149a5
+runtime.ReplayManager()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_replay_manager.go:56 +0x1a6 fp=0xc000094fe0 sp=0xc000094da8 pc=0x415046
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000094fe8 sp=0xc000094fe0 pc=0x496881
+created by runtime.EnableReplay in goroutine 18
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_replay.go:211 +0xb1
+
+goroutine 21 gp=0xc000102a80 m=nil [chan receive]:
+runtime.gopark(0x644f88, 0xc0000ba068, 0xe, 0x7, 0x2)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000095c90 sp=0xc000095c60 pc=0x48f7f1
+runtime.chanrecv(0xc0000ba000, 0xc000095ed0, 0x1, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/chan.go:872 +0x585 fp=0xc000095db0 sp=0xc000095c90 pc=0x41dec5
+runtime.chanrecv1(0x7?, 0x2?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/chan.go:638 +0x14 fp=0xc000095dd8 sp=0xc000095db0 pc=0x41d934
+sync.(*Mutex).Lock(0xc00011a5c0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/mutex.go:59 +0x159 fp=0xc000095f38 sp=0xc000095dd8 pc=0x4a1799
+deadlocks.TestMixedDeadlock_MD2_1B.func1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:56 +0x2a fp=0xc000095f68 sp=0xc000095f38 pc=0x5cae2a
+deadlocks.run2.func1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:37 +0x6c fp=0xc000095fe0 sp=0xc000095f68 pc=0x5cab2c
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000095fe8 sp=0xc000095fe0 pc=0x496881
+created by deadlocks.run2 in goroutine 18
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:37 +0xcb
+
+goroutine 22 gp=0xc000102c40 m=nil [semacquire]:
+runtime.gopark(0x6452a0, 0x77aca0, 0x13, 0x5, 0x4)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc0005189c8 sp=0xc000518998 pc=0x48f7f1
+runtime.goparkunlock(0xc000518a38?, 0x45?, 0xd7?, 0x795fa0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:519 +0x25 fp=0xc0005189f8 sp=0xc0005189c8 pc=0x4586c5
+runtime.semacquire1(0x7758b8, 0x0, 0x0, 0x0, 0x13)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:192 +0x189 fp=0xc000518a48 sp=0xc0005189f8 pc=0x46dda9
+runtime.semacquire(0xc000518aa0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:143 +0x1e fp=0xc000518a80 sp=0xc000518a48 pc=0x46dbfe
+runtime.gcStart({0x7f37c386ca78?, 0x5?, 0x0?})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:682 +0x14e fp=0xc000518ba0 sp=0xc000518a80 pc=0x4311ce
+runtime.mallocgcTiny(0x8, 0x0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1244 +0x1fe fp=0xc000518bf8 sp=0xc000518ba0 pc=0x42677e
+runtime.mallocgc(0x8, 0x5fcc80, 0x1)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1057 +0xb2 fp=0xc000518c28 sp=0xc000518bf8 pc=0x48de92
+runtime.makeslice(0x0?, 0x4249c5?, 0x0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/slice.go:116 +0x86 fp=0xc000518c60 sp=0xc000518c28 pc=0x4913c6
+runtime.Caller(0x2)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/extern.go:316 +0x39 fp=0xc000518d88 sp=0xc000518c60 pc=0x421ab9
+runtime.WaitForReplay(0x7, 0x2, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_replay_wait.go:44 +0x6b fp=0xc000518dd8 sp=0xc000518d88 pc=0x4171cb
+sync.(*Mutex).Lock(0xc00011a5c0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/mutex.go:56 +0x4e fp=0xc000518f38 sp=0xc000518dd8 pc=0x4a168e
+deadlocks.TestMixedDeadlock_MD2_1B.func2()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:63 +0x34 fp=0xc000518f68 sp=0xc000518f38 pc=0x5cadd4
+deadlocks.run2.func2()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:38 +0x6c fp=0xc000518fe0 sp=0xc000518f68 pc=0x5caa2c
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000518fe8 sp=0xc000518fe0 pc=0x496881
+created by deadlocks.run2 in goroutine 18
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go:38 +0x14b
+
+goroutine 23 gp=0xc000102e00 m=nil [GC worker (idle)]:
+runtime.gopark(0x645000, 0xc000516000, 0x1c, 0xa, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000090f30 sp=0xc000090f00 pc=0x48f7f1
+runtime.gcBgMarkWorker(0xc000116990)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1463 +0xfc fp=0xc000090fc8 sp=0xc000090f30 pc=0x432cdc
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x25 fp=0xc000090fe0 sp=0xc000090fc8 pc=0x432b85
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000090fe8 sp=0xc000090fe0 pc=0x496881
+created by runtime.gcBgMarkStartWorkers in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x65
+
+goroutine 24 gp=0xc000102fc0 m=nil [GC worker (idle)]:
+runtime.gopark(0x645000, 0xc000516200, 0x1c, 0xa, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000091f30 sp=0xc000091f00 pc=0x48f7f1
+runtime.gcBgMarkWorker(0xc000116990)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1463 +0xfc fp=0xc000091fc8 sp=0xc000091f30 pc=0x432cdc
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x25 fp=0xc000091fe0 sp=0xc000091fc8 pc=0x432b85
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000091fe8 sp=0xc000091fe0 pc=0x496881
+created by runtime.gcBgMarkStartWorkers in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x65
+
+goroutine 25 gp=0xc000103180 m=nil [GC worker (idle)]:
+runtime.gopark(0x645000, 0xc000516400, 0x1c, 0xa, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000092f30 sp=0xc000092f00 pc=0x48f7f1
+runtime.gcBgMarkWorker(0xc000116990)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1463 +0xfc fp=0xc000092fc8 sp=0xc000092f30 pc=0x432cdc
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x25 fp=0xc000092fe0 sp=0xc000092fc8 pc=0x432b85
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000092fe8 sp=0xc000092fe0 pc=0x496881
+created by runtime.gcBgMarkStartWorkers in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x65
+
+goroutine 26 gp=0xc000103340 m=nil [GC worker (idle)]:
+runtime.gopark(0x645000, 0xc000516600, 0x1c, 0xa, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000093f30 sp=0xc000093f00 pc=0x48f7f1
+runtime.gcBgMarkWorker(0xc000116990)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1463 +0xfc fp=0xc000093fc8 sp=0xc000093f30 pc=0x432cdc
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x25 fp=0xc000093fe0 sp=0xc000093fc8 pc=0x432b85
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000093fe8 sp=0xc000093fe0 pc=0x496881
+created by runtime.gcBgMarkStartWorkers in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x65
+
+goroutine 27 gp=0xc000103500 m=nil [GC worker (idle)]:
+runtime.gopark(0x645000, 0xc000516800, 0x1c, 0xa, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc00051cf30 sp=0xc00051cf00 pc=0x48f7f1
+runtime.gcBgMarkWorker(0xc000116990)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1463 +0xfc fp=0xc00051cfc8 sp=0xc00051cf30 pc=0x432cdc
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x25 fp=0xc00051cfe0 sp=0xc00051cfc8 pc=0x432b85
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc00051cfe8 sp=0xc00051cfe0 pc=0x496881
+created by runtime.gcBgMarkStartWorkers in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x65
+
+goroutine 28 gp=0xc0001036c0 m=nil [GC worker (idle)]:
+runtime.gopark(0x645000, 0xc000516a00, 0x1c, 0xa, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc00051df30 sp=0xc00051df00 pc=0x48f7f1
+runtime.gcBgMarkWorker(0xc000116990)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1463 +0xfc fp=0xc00051dfc8 sp=0xc00051df30 pc=0x432cdc
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x25 fp=0xc00051dfe0 sp=0xc00051dfc8 pc=0x432b85
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc00051dfe8 sp=0xc00051dfe0 pc=0x496881
+created by runtime.gcBgMarkStartWorkers in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x65
+
+goroutine 29 gp=0xc000103880 m=nil [GC worker (idle)]:
+runtime.gopark(0x645000, 0xc000516c00, 0x1c, 0xa, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc00051ef30 sp=0xc00051ef00 pc=0x48f7f1
+runtime.gcBgMarkWorker(0xc000116990)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1463 +0xfc fp=0xc00051efc8 sp=0xc00051ef30 pc=0x432cdc
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x25 fp=0xc00051efe0 sp=0xc00051efc8 pc=0x432b85
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc00051efe8 sp=0xc00051efe0 pc=0x496881
+created by runtime.gcBgMarkStartWorkers in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x65
+
+goroutine 30 gp=0xc000103a40 m=nil [GC worker (idle)]:
+runtime.gopark(0x645000, 0xc000516e00, 0x1c, 0xa, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc00051ff30 sp=0xc00051ff00 pc=0x48f7f1
+runtime.gcBgMarkWorker(0xc000116990)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1463 +0xfc fp=0xc00051ffc8 sp=0xc00051ff30 pc=0x432cdc
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x25 fp=0xc00051ffe0 sp=0xc00051ffc8 pc=0x432b85
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc00051ffe8 sp=0xc00051ffe0 pc=0x496881
+created by runtime.gcBgMarkStartWorkers in goroutine 20
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:1373 +0x65
+
+goroutine 33 gp=0xc000208000 m=nil [semacquire]:
+runtime.gopark(0x6452a0, 0x77aca0, 0x13, 0x5, 0x4)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:460 +0xf1 fp=0xc000519860 sp=0xc000519830 pc=0x48f7f1
+runtime.goparkunlock(0xc0005198d0?, 0x45?, 0xd7?, 0x795fa0?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/proc.go:519 +0x25 fp=0xc000519890 sp=0xc000519860 pc=0x4586c5
+runtime.semacquire1(0x7758b8, 0x0, 0x0, 0x0, 0x13)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:192 +0x189 fp=0xc0005198e0 sp=0xc000519890 pc=0x46dda9
+runtime.semacquire(0xc000519938?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/sema.go:143 +0x1e fp=0xc000519918 sp=0xc0005198e0 pc=0x46dbfe
+runtime.gcStart({0x7f37c386ca78?, 0x4a2202?, 0x722b90?})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/mgc.go:682 +0x14e fp=0xc000519a38 sp=0xc000519918 pc=0x4311ce
+runtime.mallocgcSmallScanNoHeader(0x8, 0x600520)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1442 +0x1fe fp=0xc000519a98 sp=0xc000519a38 pc=0x426c1e
+runtime.mallocgc(0x8, 0x600520, 0x1)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1066 +0xe7 fp=0xc000519ac8 sp=0xc000519a98 pc=0x48dec7
+runtime.newobject(0x4144b3?)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/malloc.go:1752 +0x25 fp=0xc000519af0 sp=0xc000519ac8 pc=0x427425
+runtime.StorePark(0xc00014e290, 0x2, 0x0)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/advocate_blocked.go:59 +0x36 fp=0xc000519b18 sp=0xc000519af0 pc=0x411916
+sync.(*Mutex).Lock(0xc00014e290)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/mutex.go:89 +0x29f fp=0xc000519c78 sp=0xc000519b18 pc=0x4a18df
+sync.(*Once).doSlow(0xc00014e288, 0xc000519e78)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/once.go:112 +0x45 fp=0xc000519d48 sp=0xc000519c78 pc=0x4a2285
+sync.(*Once).Do(0xc00014e288, 0xc000519e78)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/sync/once.go:102 +0x257 fp=0xc000519e58 sp=0xc000519d48 pc=0x4a21f7
+testing.(*M).after(0xc00014e210)
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2564 +0x57 fp=0xc000519e98 sp=0xc000519e58 pc=0x55ac17
+testing.(*M).startAlarm.func1()
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/testing/testing.go:2669 +0x2b fp=0xc000519fe0 sp=0xc000519e98 pc=0x55c06b
+runtime.goexit({})
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000519fe8 sp=0xc000519fe0 pc=0x496881
+created by time.goFunc
+	/workspaces/seminararbeit-go-concurrency/ADVOCATE/goPatch/src/time/sleep.go:215 +0x38
+
+rax    0xca
+rbx    0x0
+rcx    0x4986c3
+rdx    0x0
+rdi    0x776210
+rsi    0x80
+rbp    0x7fff1d0d2df0
+rsp    0x7fff1d0d2da8
+r8     0x0
+r9     0x0
+r10    0x0
+r11    0x286
+r12    0x7fff1d0d2df0
+r13    0x0
+r14    0x775180
+r15    0x2031
+rip    0x4986c1
+rflags 0x286
+cs     0x33
+fs     0x0
+gs     0x0
+*** Test killed with quit: ran too long (11m0s).
+FAIL	deadlocks	660.004s
+FAIL

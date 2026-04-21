@@ -1,0 +1,10 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Actual Leak:tp:
+	Blocked: /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:18@12;/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:23@10
+
+
+```

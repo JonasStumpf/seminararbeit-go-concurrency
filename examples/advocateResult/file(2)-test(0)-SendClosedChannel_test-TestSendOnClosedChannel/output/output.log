@@ -1,0 +1,17 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/SendClosedChannel_test.go
+TestName:  TestSendOnClosedChannel
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/SendClosedChannel_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestSendOnClosedChannel
+HAS:  false
+
+Exit Replay with code  30 Send on close
+Exit Message: panic: send on closed channel
+
+FAIL	example	1.212s
+FAIL
+Bugreport info: 0_1,fail
+Bugreport info: 0_2,fail
+Bugreport info: 0_3,fail

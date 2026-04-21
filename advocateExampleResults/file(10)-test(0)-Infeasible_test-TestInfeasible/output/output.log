@@ -1,0 +1,10 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Infeasible_test.go
+TestName:  TestInfeasible
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Infeasible_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestInfeasible
+--- PASS: TestInfeasible (1.01s)
+PASS
+ok  	deadlocks	1.009s

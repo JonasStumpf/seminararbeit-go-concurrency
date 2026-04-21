@@ -1,0 +1,13 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go
+TestName:  TestBasicDeadlock
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestBasicDeadlock
+DEADLOCK_GC@2@/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:18@chan:send
+DEADLOCK_GC@3@/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:23@chan:send
+--- PASS: TestBasicDeadlock (2.01s)
+PASS
+ok  	example	2.010s
+Bugreport info: 0_1,fail

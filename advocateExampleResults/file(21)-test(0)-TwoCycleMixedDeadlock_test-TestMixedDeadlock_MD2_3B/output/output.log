@@ -1,0 +1,34 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+TestName:  TestMixedDeadlock_MD2_3B
+Import added at line: 26
+Header added at line: 141
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestMixedDeadlock_MD2_3B
+--- PASS: TestMixedDeadlock_MD2_3B (1.06s)
+PASS
+ok  	deadlocks	1.062s
+rewriteMixedDeadlock: lastTime = 44
+rewriteMixedDeadlock: pair 0: waiter=R2 holder=R3
+rewriteMixedDeadlock: waiter R2 shortened (drop chanElem tSort=28)
+rewriteMixedDeadlock: holder R3 shortened to C.tPost=44
+rewriteMixedDeadlock: waiterLock R2 tPre=14 tPost=0
+rewriteMixedDeadlock: holderChan R3 tPre=42 tPost=0
+rewriteMixedDeadlock: pair 1: waiter=R3 holder=R2
+rewriteMixedDeadlock: waiter R3 shortened (drop chanElem tSort=9223372036854775807)
+rewriteMixedDeadlock: holder R2 shortened to C.tPost=28
+rewriteMixedDeadlock: waiterLock R3 tPre=36 tPost=0
+rewriteMixedDeadlock: holderChan R2 tPre=26 tPost=0
+rewriteMixedDeadlock: holder R3 elem tPre 36->12 tPost=12
+rewriteMixedDeadlock: holder R3 elem tPre 42->13 tPost=13
+rewriteMixedDeadlock: holder R2 elem tPre 14->34 tPost=34
+rewriteMixedDeadlock: holder R2 elem tPre 20->35 tPost=35
+rewriteMixedDeadlock: done. Marker at 45 code 42 (ExitCodeMixedDeadlock=42)
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+TestName:  TestMixedDeadlock_MD2_3B
+Import added at line: 26
+Header added at line: 141
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/TwoCycleMixedDeadlock_test.go
+=== RUN   TestMixedDeadlock_MD2_3B
+Reading trace from rewrittenTrace_1

@@ -1,0 +1,40 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go
+TestName:  TestBasicLockdep
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestBasicLockdep
+--- PASS: TestBasicLockdep (1.01s)
+PASS
+ok  	deadlocks	1.014s
+Deadlocking Element:  1 M 10 14 1000000002
+Deadlocking Element:  2 M 40 44 1000000001
+Bugreport info: 0_1,suc
+Deadlocking Element:  1 M 10 14 1000000002
+Deadlocking Element:  2 M 58 62 1000000001
+Bugreport info: 0_2,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go
+TestName:  TestBasicLockdep
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go
+=== RUN   TestBasicLockdep
+Reading trace from rewrittenTrace_1
+FinishReplay
+Found ReplayEnd Marker with exit code 41
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.008s
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go
+TestName:  TestBasicLockdep
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_lockdep_test.go
+=== RUN   TestBasicLockdep
+Reading trace from rewrittenTrace_2
+FinishReplay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	5.009s

@@ -1,0 +1,26 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_mixed2_test.go
+TestName:  TestReadWriteMixed2
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_mixed2_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestReadWriteMixed2
+--- PASS: TestReadWriteMixed2 (1.01s)
+PASS
+ok  	deadlocks	1.012s
+Deadlocking Element:  2 M 48 50 1000000001
+Deadlocking Element:  1 M 14 22 1000000003
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_mixed2_test.go
+TestName:  TestReadWriteMixed2
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ReadWrite_mixed2_test.go
+=== RUN   TestReadWriteMixed2
+Reading trace from rewrittenTrace_1
+Found ReplayEnd Marker with exit code 41
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.007s

@@ -1,0 +1,38 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_looped_test.go
+TestName:  TestBasicLooped
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_looped_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestBasicLooped2
+--- PASS: TestBasicLooped2 (0.00s)
+=== RUN   TestBasicLoopedSynced
+--- PASS: TestBasicLoopedSynced (0.00s)
+=== RUN   TestBasicLoopedForked
+--- PASS: TestBasicLoopedForked (0.10s)
+=== RUN   TestBasicLooped
+--- PASS: TestBasicLooped (1.01s)
+PASS
+ok  	deadlocks	1.112s
+Deadlocking Element:  1 M 10 14 1000000002
+Deadlocking Element:  2 M 82 86 1000000001
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_looped_test.go
+TestName:  TestBasicLooped
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/Basic_looped_test.go
+=== RUN   TestBasicLooped2
+--- PASS: TestBasicLooped2 (0.00s)
+=== RUN   TestBasicLoopedSynced
+--- PASS: TestBasicLoopedSynced (0.00s)
+=== RUN   TestBasicLoopedForked
+--- PASS: TestBasicLoopedForked (0.10s)
+=== RUN   TestBasicLooped
+Reading trace from rewrittenTrace_1
+Found ReplayEnd Marker with exit code 41
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	deadlocks	1.108s

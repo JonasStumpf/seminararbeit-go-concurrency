@@ -1,0 +1,18 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Actual Send on Closed Channel:tp:
+	send: /workspaces/seminararbeit-go-concurrency/examples/SendClosedChannel_test.go:23@0
+
+
+2 Actual Send on Closed Channel:tp:
+	send: /workspaces/seminararbeit-go-concurrency/examples/SendClosedChannel_test.go:23@12
+	close: /workspaces/seminararbeit-go-concurrency/examples/SendClosedChannel_test.go:18@8
+
+3 Block on routine or unknown element:tp:
+	elem: 
+
+
+```
