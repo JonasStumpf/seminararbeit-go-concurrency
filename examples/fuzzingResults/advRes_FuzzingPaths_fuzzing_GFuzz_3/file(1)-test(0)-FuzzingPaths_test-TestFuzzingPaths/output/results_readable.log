@@ -1,0 +1,14 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Block on select without partner or nil case:tp:
+	elem: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go:23@62
+
+
+2 Block on routine or unknown element:tp:
+	elem: 
+
+
+```

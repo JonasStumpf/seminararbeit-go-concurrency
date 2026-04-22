@@ -1,0 +1,3 @@
+A01,tp,T:0:0:0:CS:/workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go:23
+L06,tp,T:2:1000000001:62:SS:/workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go:23,T:5:5000000004:38:SS:/workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go:50
+L00,tp,

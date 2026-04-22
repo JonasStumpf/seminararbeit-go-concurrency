@@ -1,0 +1,10 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go
+TestName:  TestMutexFuzzing
+Import added at line: 3
+Header added at line: 23
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestMutexFuzzing
+--- PASS: TestMutexFuzzing (1.31s)
+PASS
+ok  	example	1.309s

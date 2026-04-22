@@ -1,0 +1,44 @@
+```
+==================== Summary ====================
+
+No bugs found
+```==================================
+```
+==================== Summary ====================
+
+No bugs found
+```==================================
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Actual unlock of not locked mutex:tp:
+	done: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go:42@0
+
+
+2 Block on routine or unknown element:tp:
+	elem: 
+
+
+```==================================
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Block on routine or unknown element:tp:
+	elem: 
+
+
+```==================================
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Block on routine or unknown element:tp:
+	elem: 
+
+
+```

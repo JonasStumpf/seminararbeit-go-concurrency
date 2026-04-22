@@ -1,0 +1,59 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+TestName:  TestFuzzingPaths
+Import added at line: 3
+Header added at line: 9
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestFuzzingPaths
+--- PASS: TestFuzzingPaths (2.01s)
+PASS
+ok  	example	2.015s
+==================================
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+TestName:  TestFuzzingPaths
+Import added at line: 3
+Header added at line: 9
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestFuzzingPaths
+--- PASS: TestFuzzingPaths (4.02s)
+PASS
+ok  	example	4.018s
+==================================
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+TestName:  TestFuzzingPaths
+Import added at line: 3
+Header added at line: 9
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestFuzzingPaths
+HAS:  false
+
+Exit Replay with code  35 Unlock of unlocked mutex
+Exit Message: panic: sync: unlock of unlocked mutex
+
+FAIL	example	3.142s
+FAIL
+==================================
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+TestName:  TestFuzzingPaths
+Import added at line: 3
+Header added at line: 9
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestFuzzingPaths
+--- PASS: TestFuzzingPaths (4.01s)
+PASS
+ok  	example	4.016s
+==================================
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+TestName:  TestFuzzingPaths
+Import added at line: 3
+Header added at line: 9
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestFuzzingPaths
+HAS:  false
+HAS:  true
+FAIL	example	0.115s
+FAIL

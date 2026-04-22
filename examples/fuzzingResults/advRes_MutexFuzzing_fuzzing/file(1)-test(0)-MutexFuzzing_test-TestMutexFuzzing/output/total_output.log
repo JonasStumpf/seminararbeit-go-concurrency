@@ -1,0 +1,28 @@
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go
+TestName:  TestMutexFuzzing
+Import added at line: 3
+Header added at line: 23
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestMutexFuzzing
+--- PASS: TestMutexFuzzing (1.31s)
+PASS
+ok  	example	1.308s
+==================================
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go
+TestName:  TestMutexFuzzing
+Import added at line: 3
+Header added at line: 23
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go
+go version go1.25.0 linux/amd64
+=== RUN   TestMutexFuzzing
+HAS:  false
+LEAK_GC@1@/workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go:43@mutex:lock
+
+Exit Replay with code  3 The program panicked unexpectedly
+Exit Message: panic: CODE WITH PANIC
+
+FAIL	example	3.111s
+FAIL
+Bugreport info: 0_1,fail
+Bugreport info: 0_2,fail

@@ -1,0 +1,18 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Actual Send on Closed Channel:tp:
+	send: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go:23@0
+
+
+2 Block on select with possible partner:tp:
+	select: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go:23@62
+	select: /workspaces/seminararbeit-go-concurrency/examples/FuzzingPaths_test.go:50@38
+
+3 Block on routine or unknown element:tp:
+	elem: 
+
+
+```

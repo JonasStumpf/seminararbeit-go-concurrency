@@ -1,0 +1,14 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Unknown Panic:tp:
+	panic: /workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go:37@0
+
+
+2 Actual Leak:tp:
+	Blocked: /workspaces/seminararbeit-go-concurrency/examples/MutexFuzzing_test.go:43@42
+
+
+```

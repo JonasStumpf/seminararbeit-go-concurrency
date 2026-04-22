@@ -1,7 +1,7 @@
 # seminararbeit-go-concurrency
 Seminararbeit Go Concurrency
 
-
+[Advocate](https://github.com/ErikKassubek/ADVOCATE/tree/main)
 
 
 Running advocate in this container needs full paths.  
@@ -9,7 +9,14 @@ e.g. running an analysis on Basic_lockdep_test from the advocate deadlocks examp
 ```bash
 /workspaces/seminararbeit-go-concurrency/ADVOCATE/advocate/advocate analysis -path /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ -exec TestBasicLockdep
 ```
-
+e.g. recording of BasicDeadlock_test:
+```bash
+/workspaces/seminararbeit-go-concurrency/ADVOCATE/advocate/advocate record -path /workspaces/seminararbeit-go-concurrency/examples -exec TestBasicDeadlock
+```
+e.g. fuzzing of BasicDeadlock_test:
+```bash
+/workspaces/seminararbeit-go-concurrency/ADVOCATE/advocate/advocate fuzzing -path /workspaces/seminararbeit-go-concurrency/examples -exec TestBasicDeadlock -mode Flow
+```
 
 # Concurrency in Go
 To run concurrent execution in Go, add the `go` keyword before a function call. This will execute the function in a new goroutine, allowing it to run concurrently with the rest of the program.
@@ -51,7 +58,9 @@ func main() {
 ```
 
 # Advocate
-Advocate tries to identify potential concurrency issues.
+[Advocate](https://github.com/ErikKassubek/ADVOCATE/tree/main) tries to identify potential concurrency issues.  
+All bugs it tries to detect can be found [here](https://github.com/ErikKassubek/ADVOCATE/tree/main#what-is-advocatego).
+
 
 > **Note**: Line numbers appear to be wrong in traces and results, probably because advocate adds lines before execution when the toolchain (commandline) is used:
 > - adds "advocate" in import
@@ -234,4 +243,18 @@ Closed: Line 18 -> line 13
 22  }
 ```
 
+
+## Fuzzing
+If part of the code isn't executed, a potential bug in that section can't be found. With fuzzing, a program/test is executed multiple times to increase the chance of executing all code and finding all potential bugs. Advocate tries to influence execution to increase the chance of executing new program paths.
+
+Advocate has multiple [Fuzzing-Modes](https://github.com/ErikKassubek/ADVOCATE/blob/main/doc/usage.md#mode-fuzzing).
+
+> **Note**: Documentation says the mode is set with `-fuzzingMode [mode]` but the flag is actually `-mode [mode]`.
+
+The example `example/MutexFuzzing_test` (copied and timeout changed from `advocate/doc/examples/fuzzing/Flow/mutex`) shows no bugs with `analysis` but with `fuzzing` (mode: Flow) it finds the bugs.  
+See the results for fuzzing in [examples/fuzzingResults/advRes_MutexFuzzing_fuzzing](examples/fuzzingResults/advRes_MutexFuzzing_fuzzing/) and for analysis in [examples/fuzzingResults/advRes_MutexFuzzing_analysis](examples/fuzzingResults/advRes_MutexFuzzing_analysis/).  
+You can see the multiple runs (2 in this case) in `total_results_readable.log`, at first it found no bugs and in the second run it found the bugs.
+
+Example `example/FuzzingPaths_test`:  
+Testing the fuzzing modes Flow, GoPie and GFuzz. They don't always find all bugs, Flow even found no bugs on a few tries (same for analysis).
 
