@@ -1,1 +1,5 @@
-C,12,0,1000000001,S,f,0,0,0,/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:18
+M,28,32,1000000002,f,L,t,/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:17
+M,34,38,1000000001,f,L,t,/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:18
+M,40,44,1000000001,f,U,t,/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:19
+M,46,50,1000000002,f,U,t,/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:20
+E,52

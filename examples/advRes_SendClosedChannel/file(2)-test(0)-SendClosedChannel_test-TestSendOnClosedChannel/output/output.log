@@ -10,7 +10,7 @@ HAS:  false
 Exit Replay with code  30 Send on close
 Exit Message: panic: send on closed channel
 
-FAIL	example	1.212s
+FAIL	example	1.209s
 FAIL
 Bugreport info: 0_1,fail
 Bugreport info: 0_2,fail

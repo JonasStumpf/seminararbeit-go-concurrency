@@ -5,9 +5,22 @@ Header added at line: 8
 Header added at file: /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go
 go version go1.25.0 linux/amd64
 === RUN   TestBasicDeadlock
-DEADLOCK_GC@2@/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:18@chan:send
-DEADLOCK_GC@3@/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:23@chan:send
---- PASS: TestBasicDeadlock (2.01s)
+--- PASS: TestBasicDeadlock (1.01s)
 PASS
-ok  	example	2.010s
-Bugreport info: 0_1,fail
+ok  	example	1.008s
+Deadlocking Element:  2 M 34 38 1000000001
+Deadlocking Element:  1 M 10 14 1000000002
+Bugreport info: 0_1,suc
+FileName:  /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go
+TestName:  TestBasicDeadlock
+Import added at line: 3
+Header added at line: 8
+Header added at file: /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go
+=== RUN   TestBasicDeadlock
+Reading trace from rewrittenTrace_1
+Found ReplayEnd Marker with exit code 41
+FinishReplay
+Disable Replay
+
+Exit Replay with code  0 The replay terminated normally
+ok  	example	1.007s

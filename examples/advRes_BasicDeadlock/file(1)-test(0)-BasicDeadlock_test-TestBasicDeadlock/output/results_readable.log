@@ -3,8 +3,8 @@
 
 -------------------- Critical -------------------
 
-1 Actual Leak:tp:
-	Blocked: /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:18@12;/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:23@10
-
+1 Possible cyclic deadlock:tp:
+	stuck: /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:24@10
+	cycle: /workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:18@34;/workspaces/seminararbeit-go-concurrency/examples/BasicDeadlock_test.go:24@10
 
 ```
