@@ -8,6 +8,7 @@ Running advocate in this container needs full paths.
 e.g. running an analysis on Basic_lockdep_test from the advocate deadlocks example:
 ```bash
 /workspaces/seminararbeit-go-concurrency/ADVOCATE/advocate/advocate analysis -path /workspaces/seminararbeit-go-concurrency/ADVOCATE/doc/examples/deadlocks/ -exec TestBasicLockdep
+/workspaces/seminararbeit-go-concurrency/ADVOCATE/advocate/advocate analysis -path /workspaces/seminararbeit-go-concurrency/examples -exec TestBasicDeadlock
 ```
 e.g. recording of BasicDeadlock_test:
 ```bash

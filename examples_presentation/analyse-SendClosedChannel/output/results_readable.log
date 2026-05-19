@@ -1,0 +1,10 @@
+```
+==================== Summary ====================
+
+-------------------- Critical -------------------
+
+1 Possible send on closed channel:tp:
+	send: /workspaces/seminararbeit-go-concurrency/examples_presentation/SendClosedChannel_test.go:19@10
+	close: /workspaces/seminararbeit-go-concurrency/examples_presentation/SendClosedChannel_test.go:24@28
+
+```
