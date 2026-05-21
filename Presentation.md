@@ -25,12 +25,12 @@ func TestSendOnClosedChannel(t *testing.T) {
 	ch := make(chan int)
 
 	go func() {
-		time.Sleep(20 * time.Millisecond) //potential delay/timeout
+		time.Sleep(20 * time.Millisecond) //potential delay/timeout, e.g. server request
 		ch <- 42
 	}()
 
 	go func() {
-		time.Sleep(50 * time.Millisecond) //potential delay/timeout
+		time.Sleep(50 * time.Millisecond) //potential delay/timeout, e.g. server request
 		close(ch)
 	}()
 
