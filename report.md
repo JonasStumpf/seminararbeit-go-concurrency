@@ -1,20 +1,22 @@
 # AdvocateGO: Systematic Concurrency Testing for Go <!-- omit in toc -->
-<p style="font-size:12px">Jonas Stumpf</p>
+Jonas Stumpf - [GitHub repository](https://github.com/JonasStumpf/seminararbeit-go-concurrency)
+<hr>
+
 
 This seminar report is about the tool [AdvocateGO](https://github.com/ErikKassubek/ADVOCATE/tree/main) and how it can be used to find concurrency bugs in Go programs. The focus is on the `analysis` mode.
 
 - [Concurrency in Go](#concurrency-in-go)
-  - [Communication between goroutines](#communication-between-goroutines)
-  - [Mutex](#mutex)
+	- [Communication between goroutines](#communication-between-goroutines)
+	- [Mutex](#mutex)
 - [Advocate](#advocate)
-  - [Record](#record)
-  - [Replay](#replay)
-  - [Analysis](#analysis)
-    - [Send on Closed Channel](#send-on-closed-channel)
-      - [Bug report markdown file](#bug-report-markdown-file)
-    - [(Cyclic) Deadlock](#cyclic-deadlock)
-    - [Example without a bug](#example-without-a-bug)
-  - [Fuzzing](#fuzzing)
+	- [Record](#record)
+	- [Replay](#replay)
+	- [Analysis](#analysis)
+		- [Send on Closed Channel](#send-on-closed-channel)
+			- [Bug report markdown file](#bug-report-markdown-file)
+		- [(Cyclic) Deadlock](#cyclic-deadlock)
+		- [Example without a bug](#example-without-a-bug)
+	- [Fuzzing](#fuzzing)
 - [Conclusion](#conclusion)
 
 
