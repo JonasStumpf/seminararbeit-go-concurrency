@@ -1,5 +1,5 @@
 
-# AdvocateGo
+# AdvocateGo: Analysis
 
 _"AdvocateGo is an analysis tool for concurrent Go programs. It tries to detects concurrency bugs and gives diagnostic insight."_   
 [source](https://github.com/ErikKassubek/ADVOCATE/tree/main)
